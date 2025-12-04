@@ -9,7 +9,7 @@ public class MainMenuController : MonoBehaviour
     public Slider sfxSlider;
 
     [Header("Audio")]
-    public AudioSource menuMusicSource; // Menüdeki "MenuMusic" objesini buraya bağlayacağız
+    public AudioSource menuMusicSource; 
 
     private void Start()
     {
