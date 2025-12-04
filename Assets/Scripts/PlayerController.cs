@@ -25,10 +25,10 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.isPlayerTurn) return;
         if (!player.SpendMana(4)) return;
 
-        // 🔥 LOG EKLE: Oyuncu ne yaptı?
+        
         GameManager.Instance.uiManager.UpdateBattleLog("Oyuncu İleri Atıldı");
         
-        // 🔥 PANEL KAPAT: Eğer Melee paneli açıksa kapat
+        
         GameManager.Instance.uiManager.ShowMeleeChoicePanel(false);
 
         LockPlayerTurn();
@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!GameManager.Instance.isPlayerTurn) return;
         
-        // Zaten Far ise gitme kontrolü
+        
         if (GameManager.Instance.currentDistance == DistanceLevel.Far) 
         {
             GameManager.Instance.uiManager.UpdateBattleLog("Zaten En Uzak Mesafedesin!");
@@ -50,7 +50,7 @@ public class PlayerController : MonoBehaviour
 
         if (!player.SpendMana(4)) return;
 
-        // 🔥 LOG VE PANEL
+        
         GameManager.Instance.uiManager.UpdateBattleLog("Oyuncu Geri Çekildi");
         GameManager.Instance.uiManager.ShowMeleeChoicePanel(false);
 
@@ -82,7 +82,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // 🔥 LOG VE PANEL
+        
         GameManager.Instance.uiManager.UpdateBattleLog("Oyuncu Ok Fırlattı!");
         GameManager.Instance.uiManager.ShowMeleeChoicePanel(false);
 
@@ -91,7 +91,7 @@ public class PlayerController : MonoBehaviour
 
         int damage = Random.Range(15, 21);
         
-        // Ok fırlat
+        
         player.ShootProjectile("Enemy", damage);
 
         StartCoroutine(EndPlayerTurnWithDelay());
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
             return;
         }
 
-        // Paneli aç
+        
         GameManager.Instance.uiManager.ShowMeleeChoicePanel(true);
     }
 
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.currentDistance != DistanceLevel.Close) return;
         if (!player.SpendMana(10)) return;
 
-        // 🔥 LOG
+        
         GameManager.Instance.uiManager.UpdateBattleLog("Oyuncu Hızlı Saldırı Yaptı!");
 
         LockPlayerTurn();
@@ -144,7 +144,7 @@ public class PlayerController : MonoBehaviour
         if (GameManager.Instance.currentDistance != DistanceLevel.Close) return;
         if (!player.SpendMana(30)) return;
 
-        // 🔥 LOG
+        
         GameManager.Instance.uiManager.UpdateBattleLog("Oyuncu Güçlü Saldırı Yaptı!");
 
         LockPlayerTurn();
@@ -171,12 +171,11 @@ public class PlayerController : MonoBehaviour
         
         if (player.currentMana >= 50) 
         {
-            // Mana çoksa uyumaya gerek yok uyarısı (Opsiyonel)
-            // Ama kural gereği "Mana < 50" şartı varsa buton zaten pasif olur.
+            
             return;
         }
 
-        // 🔥 LOG
+        
         GameManager.Instance.uiManager.UpdateBattleLog("Oyuncu Dinleniyor...");
         GameManager.Instance.uiManager.ShowMeleeChoicePanel(false);
 
@@ -193,7 +192,7 @@ public class PlayerController : MonoBehaviour
         if (!GameManager.Instance.isPlayerTurn) return;
         if (!player.SpendMana(25)) return;
 
-        // 🔥 LOG
+        
         GameManager.Instance.uiManager.UpdateBattleLog("Oyuncu Savunmaya Geçti!");
         GameManager.Instance.uiManager.ShowMeleeChoicePanel(false);
 
