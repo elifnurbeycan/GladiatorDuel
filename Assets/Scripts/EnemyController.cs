@@ -13,7 +13,7 @@ public class EnemyController : MonoBehaviour
 
     private IEnumerator EnemyTurnRoutine()
     {
-        // Düşünme payı
+    
         yield return new WaitForSeconds(1.0f);
 
         bool actionDone = false;
@@ -23,8 +23,7 @@ public class EnemyController : MonoBehaviour
         {
             safety++;
 
-            // 🔥 ÖDEV KURALI: YAPAY ZEKA YOK, RASTGELELİK VAR 🔥
-            // 0: Move, 1: Ranged, 2: Melee, 3: Sleep, 4: ArmorUp
+
             int choice = Random.Range(0, 5); 
 
             switch (choice)
@@ -42,18 +41,16 @@ public class EnemyController : MonoBehaviour
         GameManager.Instance.EndEnemyTurn();
     }
 
-    // ================================================================
-    // AKSİYONLAR (LOG EKLENDİ)
-    // ================================================================
+
 
     private bool EnemyMove()
     {
         if (!enemy.SpendMana(4)) return false;
 
-        // 🔥 LOG
+       
         GameManager.Instance.uiManager.UpdateBattleLog("Rakip Hareket Etti");
 
-        // Rastgele İleri veya Geri
+       
         bool forward = Random.value > 0.5f;
 
         if (forward)
@@ -70,14 +67,14 @@ public class EnemyController : MonoBehaviour
         if (!enemy.SpendMana(20)) return false;
         if (GameManager.Instance.currentDistance == DistanceLevel.Close) return false;
 
-        // 🔥 LOG
+   
         GameManager.Instance.uiManager.UpdateBattleLog("Rakip Ok Fırlattı!");
 
         enemy.currentAmmo--;
         
         int damage = Random.Range(15, 21);
         
-        // Ok fırlat (Projectile)
+      
         enemy.ShootProjectile("Player", damage);
 
         return true;
@@ -87,13 +84,13 @@ public class EnemyController : MonoBehaviour
     {
         if (GameManager.Instance.currentDistance != DistanceLevel.Close) return false;
 
-        // Rastgele güç seçimi
+      
         bool power = Random.value > 0.5f;
         int manaCost = power ? 30 : 10;
 
         if (!enemy.SpendMana(manaCost)) return false;
 
-        // 🔥 LOG (Saldırı tipine göre)
+     
         if(power) GameManager.Instance.uiManager.UpdateBattleLog("Rakip Güçlü Saldırdı!");
         else GameManager.Instance.uiManager.UpdateBattleLog("Rakip Hızlı Saldırdı!");
 
@@ -105,7 +102,7 @@ public class EnemyController : MonoBehaviour
             if (Random.value > 0.5f) 
             {
                 GameManager.Instance.uiManager.UpdateBattleLog("Rakip Iskaladı!");
-                return true; // Hamle yapıldı ama boşa gitti
+                return true; 
             }
             dmg = Random.Range(25, 36);
         }
@@ -127,7 +124,7 @@ public class EnemyController : MonoBehaviour
     {
         if (enemy.currentMana >= enemy.maxMana) return false;
 
-        // 🔥 LOG
+       
         GameManager.Instance.uiManager.UpdateBattleLog("Rakip Dinleniyor...");
 
         enemy.RestoreMana(40);
@@ -139,7 +136,7 @@ public class EnemyController : MonoBehaviour
     {
         if (!enemy.SpendMana(25)) return false;
 
-        // 🔥 LOG
+       
         GameManager.Instance.uiManager.UpdateBattleLog("Rakip Savunmaya Geçti!");
 
         enemy.ActivateArmorUp(2);
