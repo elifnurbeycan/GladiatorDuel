@@ -12,7 +12,7 @@
 
 | Ana Menü | Savaş Ekranı |
 | :---: | :---: |
-| ![Ana Menü](https://via.placeholder.com/400x200?text=<img width="957" height="597" alt="Ekran görüntüsü 2025-12-04 230942" src="https://github.com/user-attachments/assets/04f3d776-8472-49c5-9ace-be3454e1ed6d" />
+| <img width="957" height="597" alt="Ekran görüntüsü 2025-12-04 230942" src="https://github.com/user-attachments/assets/04f3d776-8472-49c5-9ace-be3454e1ed6d" />
 Ana+Menu+Gorseli) | ![Savaş Ekranı](https://via.placeholder.com/400x200?text=Savas+Gorseli) |
 | *Oyun Giriş Ekranı* | *Sıra Tabanlı Savaş Anı* |
 
