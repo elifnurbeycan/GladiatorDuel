@@ -8,12 +8,10 @@
 
 ## 📸 Oyun İçi Görseller
 
-*(Projenizden aldığınız ekran görüntülerini GitHub'a yükleyip linklerini aşağıya ekleyebilirsiniz)*
 
 
-
-| <img width="957" height="597" alt="Ekran görüntüsü 2025-12-04 230942" src="https://github.com/user-attachments/assets/04f3d776-8472-49c5-9ace-be3454e1ed6d" />
-| <img width="931" height="520" alt="Ekran görüntüsü 2025-12-04 231832" src="https://github.com/user-attachments/assets/fe257a08-4cb0-45a7-864b-bdb3b1d0b1e9" />
+ <img width="957" height="597" alt="Ekran görüntüsü 2025-12-04 230942" src="https://github.com/user-attachments/assets/04f3d776-8472-49c5-9ace-be3454e1ed6d" />
+ <img width="931" height="520" alt="Ekran görüntüsü 2025-12-04 231832" src="https://github.com/user-attachments/assets/fe257a08-4cb0-45a7-864b-bdb3b1d0b1e9" />
 
 
 
