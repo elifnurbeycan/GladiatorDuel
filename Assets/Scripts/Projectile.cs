@@ -22,7 +22,7 @@ public class Projectile : MonoBehaviour
         transform.Translate(Vector3.right * speed * Time.deltaTime);
     }
 
-    // Hem Trigger hem Collision dinliyoruz
+    
     void OnTriggerEnter2D(Collider2D hitInfo)
     {
         Debug.Log("OK BİR ŞEYE DEĞDİ (Trigger): " + hitInfo.name);
