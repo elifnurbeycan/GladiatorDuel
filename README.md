@@ -2,7 +2,7 @@
 
 > **Bu proje, Unity Oyun Motoru kullanılarak geliştirilmiş, fizik tabanlı ve sıra tabanlı bir 2D strateji oyunudur.**
 
-🎮 **Tarayıcıda Oyna (WebGL):** [BURAYA ITCH.IO LİNKİNİ YAPIŞTIR]
+🎮 **Tarayıcıda Oyna (WebGL):** https://elifnurbeycan.itch.io/gladiator-duel
 
 ---
 
