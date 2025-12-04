@@ -29,7 +29,7 @@ public class Gladiator : MonoBehaviour
 
     [Header("Projectile Settings")]
     public GameObject arrowPrefab;    // Fırlatılacak Ok Prefab'ı
-    public Transform firePoint;       // Okun çıkacağı nokta (Namlu)
+    public Transform firePoint;       // Okun çıkacağı nokta
 
     private void Awake()
     {
@@ -38,10 +38,10 @@ public class Gladiator : MonoBehaviour
         currentAmmo = maxAmmo;
     }
 
-    // Awake'ten hemen sonra çalışır
+    
     private void Start()
     {
-        // 🔥 SFX AYARINI HAFIZADAN ÇEK 🔥
+        
         float sfxVol = PlayerPrefs.GetFloat("SFXVolume", 0.5f);
 
         if (audioSource != null)
@@ -50,7 +50,7 @@ public class Gladiator : MonoBehaviour
         }
     }
 
-    // --- FIRLATMA (PROJECTILE) SİSTEMİ ---
+    // --- FIRLATMA SİSTEMİ ---
     
     public void ShootProjectile(string targetTag, int dmg)
     {
@@ -60,7 +60,7 @@ public class Gladiator : MonoBehaviour
         // 2. Pozisyonu Al
         Vector3 spawnPos = (firePoint != null) ? firePoint.position : transform.position;
         
-        // 🔥 YENİ YÖN AYARI (Kesin Çözüm) 🔥
+        
         Quaternion spawnRot;
 
         // Eğer bu scripti çalıştıran kişi "Enemy" ise;
@@ -72,7 +72,7 @@ public class Gladiator : MonoBehaviour
         else
         {
             // Player ise düz kalsın (Sağa baksın)
-            spawnRot = Quaternion.identity; // (0,0,0) demektir
+            spawnRot = Quaternion.identity; 
         }
 
         // 3. Oku Yarat
@@ -110,11 +110,11 @@ public class Gladiator : MonoBehaviour
 
         if (isWalking)
         {
-            // Eğer zaten çalıyorsa tekrar başlatma (Sesin üst üste binmesini engeller)
+            
             if (!audioSource.isPlaying || audioSource.clip != walkSound)
             {
                 audioSource.clip = walkSound;
-                audioSource.loop = true; // Yürüdüğü sürece döngüde kalsın
+                audioSource.loop = true; 
                 audioSource.Play();
             }
         }
@@ -130,7 +130,7 @@ public class Gladiator : MonoBehaviour
     }
 
     // 2. Saldırı Animasyonu ve Sesi (Tetikleyici)
-    // Hem Melee saldırıda hem de Ok atarken bunu çağırabiliriz
+    
     public void TriggerAttack()
     {
         if (animator != null)
@@ -147,14 +147,14 @@ public class Gladiator : MonoBehaviour
     // 3. Hasar ve Ölüm Mantığı
     public void TakeDamage(int amount)
     {
-        // Zaten öldüyse tepki verme
+        
         if (currentHP <= 0) return;
 
         float finalDamage = amount;
 
         if (armorUpActive)
         {
-            finalDamage *= 0.8f; // %20 hasar azaltma
+            finalDamage *= 0.8f; 
         }
 
         currentHP -= Mathf.RoundToInt(finalDamage);
