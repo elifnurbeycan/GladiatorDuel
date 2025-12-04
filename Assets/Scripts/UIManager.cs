@@ -75,8 +75,7 @@ public class UIManager : MonoBehaviour
         {
             battleLogText.text = message;
             
-            // İstersen 2 saniye sonra silinmesi için Coroutine yazabilirsin
-            // ama şimdilik kalıcı dursun, yeni mesaj gelince değişsin.
+            
         }
     }
 
@@ -90,12 +89,12 @@ public class UIManager : MonoBehaviour
 
         if (!enable)
         {
-            // Tur rakipteyken sleep'i de kapat
+            
             sleepButton.interactable = false;
         }
         else
         {
-            // Oyuncu turu başladığında tekrar güncellensin
+            
             UpdateAllUI();
         }
     }
